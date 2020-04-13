@@ -1,0 +1,1 @@
+docker run --rm -it --net=host redis:latest redis-cli --cluster create 192.168.56.101:7000 192.168.56.101:7001 192.168.56.101:7002 192.168.56.101:7100 192.168.56.101:7101 192.168.56.101:7102 --cluster-replicas 1

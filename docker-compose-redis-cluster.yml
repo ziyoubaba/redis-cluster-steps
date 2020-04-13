@@ -1,0 +1,73 @@
+version: "3.4"
+
+x-image:
+  &default-image
+  redis:latest
+x-restart:
+  &default-restart
+  always
+x-network_mode:
+  &default-network_mode
+  host
+
+services:
+  redis_7000:
+    image: *default-image
+    container_name: redis_7000
+    command: redis-server /etc/redis/redis.conf
+    volumes:
+      - "./7000/data:/data"
+      - "./7000/conf/redis.conf:/etc/redis/redis.conf"
+    network_mode: *default-network_mode
+    restart: *default-restart
+
+  redis_7001:
+    image: *default-image
+    container_name: redis_7001
+    command: redis-server /etc/redis/redis.conf
+    volumes:
+      - "./7001/data:/data"
+      - "./7001/conf/redis.conf:/etc/redis/redis.conf"
+    network_mode: *default-network_mode
+    restart: *default-restart
+
+  redis_7002:
+    image: *default-image
+    container_name: redis_7002
+    command: redis-server /etc/redis/redis.conf
+    volumes:
+      - "./7002/data:/data"
+      - "./7002/conf/redis.conf:/etc/redis/redis.conf"
+    network_mode: *default-network_mode
+    restart: *default-restart
+
+  redis_7100:
+    image: *default-image
+    container_name: redis_7100
+    command: redis-server /etc/redis/redis.conf
+    volumes:
+      - "./7100/data:/data"
+      - "./7100/conf/redis.conf:/etc/redis/redis.conf"
+    network_mode: *default-network_mode
+    restart: *default-restart
+
+  redis_7101:
+    image: *default-image
+    container_name: redis_7101
+    command: redis-server /etc/redis/redis.conf
+    volumes:
+      - "./7101/data:/data"
+      - "./7101/conf/redis.conf:/etc/redis/redis.conf"
+    network_mode: *default-network_mode
+    restart: *default-restart
+
+  redis_7102:
+    image: *default-image
+    container_name: redis_7102
+    command: redis-server /etc/redis/redis.conf
+    volumes:
+      - "./7102/data:/data"
+      - "./7102/conf/redis.conf:/etc/redis/redis.conf"
+    network_mode: *default-network_mode
+    restart: *default-restart
+
